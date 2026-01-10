@@ -1,7 +1,17 @@
+import { useEffect } from 'react';
 import { CheckoutHeader } from './CheckoutHeader';
 import './CheckoutPage.css';
 
 export function CheckoutPage() {
+  useEffect(() => {
+    document.title = 'Checkout';
+
+    const favicon = document.querySelector("link[rel='icon']");
+    if (favicon) {
+      favicon.href = '/images/cart-favicon.png';
+    }
+  }, []);
+
   return (
     <>
       <title>Checkout</title>

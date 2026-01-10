@@ -1,10 +1,21 @@
+import { useEffect } from 'react';
 import { Header } from '../components/Header';
 import './HomePage.css';
 
 export function HomePage(){
+  useEffect(() => {
+    document.title = 'Ecommerce Project';
+
+    const favicon = document.querySelector("link[rel='icon']");
+    if (favicon) {
+      favicon.href = '/images/home-favicon.png';
+    }
+  }, []);
+
     return (
       <>
         <title>Ecommerce Project</title>
+        <link rel="icon" type="image/svg+xml" href="/images/home-favicon.png" />
         <Header />
         
         <div className="home-page">
